@@ -3,6 +3,9 @@
 ### **Observações**:
 Esse código foi testado apenas em ambiente linux. Não sabemos como ele poderá responder em um ambiente windows ou macos.
 
+### Linguagem utilizada
+python==3.6.9
+
 ### Como usar:
 1 - Crie uma ambiente virtual do python. E.g. _virtualenv_ ou _virtualenvwrapper_.
 
