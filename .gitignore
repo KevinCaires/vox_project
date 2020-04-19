@@ -1,4 +1,3 @@
 .vscode/
-main.py
-vox_in_out.py
-hello.mp3
+__pycache__
+*.mp3
