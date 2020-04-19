@@ -1,10 +1,10 @@
 from gtts import gTTS
-from loader_recorder import set_command, get_response
+from loader_recorder import set_command, get_response, get_command_list
 from os import path, system
 import pygame
 from speech_recognition import Recognizer, UnknownValueError, Microphone
 
-COMMAND_LIST = ['ADD', 'LISTAR COMANDOS']
+COMMAND_LIST = ['ADD', 'LISTAR']
 
 def record_audio(audio):
     """
@@ -33,7 +33,10 @@ def get_audio():
         # Limpa informações de inicialização do terminal.
         system('clear')
         
-        print(f'Entre com um dos comandos: {COMMAND_LIST}')
+        # Mostra na tela os comandos padrões.
+        print('Comandos basicos:')
+        for info in COMMAND_LIST:
+            print(info)
 
         # Armazena a informação de audio na variável.
         audio = mic_in.listen(source)
@@ -42,17 +45,21 @@ def get_audio():
             # Passa o aúdio para o reconhecedor de padrões do google trasformar em frase.
             phrase = mic_in.recognize_google(audio, language='pt-BR')
             print(f'Entrada de aúdio: {phrase}')
-
-            if str(phrase).upper() not in COMMAND_LIST:
-                out_put = get_response(phrase)
-                record_audio(out_put)
-
-                return out_put
             
+            # Condição para o caso de o usuário use o comando ADD.
             if str(phrase).upper() == COMMAND_LIST[0]:
                 set_command()
 
                 return get_audio()
+            
+            # Condição para o caso de o usuário use o comando LISTAR.
+            if str(phrase).upper() == COMMAND_LIST[1]:
+                command_list = [info for info in get_command_list()]
+
+                return command_list
+
+            record_audio(get_response(phrase))
+            return reponse_audio()
 
         except UnknownValueError:
             print('Padrão de fala não reconhecido. Tente novamente!')
