@@ -37,6 +37,22 @@ def sql_insert(command, response):
     conn.commit()
     conn.close()
 
+def get_command_list():
+    """
+    Lista todos os comandos do banco de dados.
+    """
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
+
+    cur.execute(
+        '''
+        SELECT commands FROM commands_and_responses
+        '''
+    )
+    response = cur.fetchall()
+    conn.close()
+    return str(response)
+
 def set_command():
     """
     Resolve o comando e a resposta passada pelo usuário, para ser salvo no DB.
@@ -66,5 +82,6 @@ def get_response(command):
         SELECT responses FROM commands_and_responses WHERE commands = '%s'
         ''' % str(command).upper()
     )
-    response = cur.fetchone()
+    response = cur.fetchall()
+    conn.close()
     return str(response)
