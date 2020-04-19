@@ -1,8 +1,10 @@
 from gtts import gTTS
+from loader_recorder import set_command, get_response, get_command_list
 from os import path, system
 import pygame
 from speech_recognition import Recognizer, UnknownValueError, Microphone
-from tools import StandardResponses
+
+COMMAND_LIST = ['ADD', 'LISTAR']
 
 def record_audio(audio):
     """
@@ -31,23 +33,41 @@ def get_audio():
         # Limpa informações de inicialização do terminal.
         system('clear')
         
-        print('Entre com um comando:')
+        # Mostra na tela os comandos padrões.
+        print('Comandos basicos:')
+        for info in COMMAND_LIST:
+            print(info)
 
         # Armazena a informação de audio na variável.
         audio = mic_in.listen(source)
 
         try:
             # Passa o aúdio para o reconhecedor de padrões do google trasformar em frase.
-            frase = mic_in.recognize_google(audio, language='pt-BR')
-            print(f'Entrada de aúdio: {frase}')
-            out_put = StandardResponses.get_command(frase)
-            record_audio(out_put)
-        except UnknownValueError:
-            print('Padão de fala não reconhecido. Tente novamente!')
+            phrase = mic_in.recognize_google(audio, language='pt-BR')
+            print(f'Entrada de aúdio: {phrase}')
+            
+            # Condição para o caso de o usuário use o comando ADD.
+            if str(phrase).upper() == COMMAND_LIST[0]:
+                set_command()
 
-    return out_put
+                return get_audio()
+            
+            # Condição para o caso de o usuário use o comando LISTAR.
+            if str(phrase).upper() == COMMAND_LIST[1]:
+                command_list = [info for info in get_command_list()]
+
+                return command_list
+
+            record_audio(get_response(phrase))
+            return reponse_audio()
+
+        except UnknownValueError:
+            print('Padrão de fala não reconhecido. Tente novamente!')
 
 def reponse_audio():
+    """
+    Responde o usuário com o aúdio da resposta.
+    """
     # Limpa o terminal.
     system('clear')
 
@@ -63,8 +83,6 @@ def reponse_audio():
 
     # Cria um temporizador.
     clock = pygame.time.Clock()
-    # Espera 10 para responder o aúdio.
-    clock.tick(10)
 
     while pygame.mixer.music.get_busy():
         # Inicia um evento para o caso de o mixer estiver ocupado o proxímo retorno aguarde 10 segundos
