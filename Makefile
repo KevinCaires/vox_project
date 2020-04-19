@@ -1,5 +1,5 @@
 run:
-	python vox.py
+	python main.py
 
 
 install:
