@@ -10,7 +10,7 @@ Esse código foi testado apenas em ambiente `linux`. Não sabemos como ele poder
 
 1 - Crie uma ambiente virtual do python. E.g. `virtualenv` ou `virtualenvwrapper`.
 
-2 - Após estar com o ambiente virtual ativo instale os pacotes necessários que estão dentro de requirements.txt - Você pode fazer isso utilizando o comando make install.
+2 - Após estar com o ambiente virtual ativo instale os pacotes necessários que estão dentro de `requirements.txt` - Você pode fazer isso utilizando o comando make install.
 
 3 - Agora que os pacotes já foram instalados podemos rodar o código no terminal - Você pode fazer isso com o comando make run
 
