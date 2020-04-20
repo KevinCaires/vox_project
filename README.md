@@ -4,7 +4,9 @@
 Esse código foi testado apenas em ambiente `linux`. Não sabemos como ele poderá responder em um ambiente `windows` ou `macos`.
 
 ### Linguagem utilizada
-`python==3.6.9`
+```py
+python==3.6
+```
 
 ### Como usar:
 
