@@ -4,7 +4,7 @@ from os import path, system
 import pygame
 from speech_recognition import Recognizer, UnknownValueError, Microphone
 
-COMMAND_LIST = ['ADD', 'LISTAR']
+COMMAND_ONE = 'ADD'
 
 def record_audio(audio):
     """
@@ -34,8 +34,9 @@ def get_audio():
         system('clear')
         
         # Mostra na tela os comandos padrões.
-        print('Comandos basicos:')
-        for info in COMMAND_LIST:
+        print('Comandos:')
+        print(COMMAND_ONE)
+        for info in get_command_list():
             print(info)
 
         # Armazena a informação de audio na variável.
@@ -47,24 +48,29 @@ def get_audio():
             print(f'Entrada de aúdio: {phrase}')
             
             # Condição para o caso de o usuário use o comando ADD.
-            if str(phrase).upper() == COMMAND_LIST[0]:
+            if str(phrase).upper() == COMMAND_ONE:
                 set_command()
 
                 return get_audio()
             
-            # Condição para o caso de o usuário use o comando LISTAR.
-            if str(phrase).upper() == COMMAND_LIST[1]:
-                command_list = [info for info in get_command_list()]
+            if str(phrase).upper() not in get_command_list():
+                record_audio('Esse comando não está cadastrado')
+                response_audio()
 
-                return command_list
+                return get_audio()
 
             record_audio(get_response(phrase))
-            return reponse_audio()
+            response_audio()
+
+            return get_audio()
 
         except UnknownValueError:
-            print('Padrão de fala não reconhecido. Tente novamente!')
+            record_audio('Padrão de fala não reconhecido. Tente novamente!')
+            response_audio()
 
-def reponse_audio():
+            return get_audio()
+
+def response_audio():
     """
     Responde o usuário com o aúdio da resposta.
     """

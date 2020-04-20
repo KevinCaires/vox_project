@@ -51,7 +51,11 @@ def get_command_list():
     )
     response = cur.fetchall()
     conn.close()
-    return str(response)
+
+    for i in range(len(response)):
+        response[i] = response[i][0]
+
+    return response
 
 def set_command():
     """
