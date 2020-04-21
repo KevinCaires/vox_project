@@ -19,7 +19,32 @@ python==3.6
 
 ### **Problemas comuns:**
 
-Pode haver erros no momento de instalar o pacote pyaudio, pois ele irá depender de outros programas instalados em seu sistema. Solucionei o problema no `StackOverflow`, link https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error.
+Pode haver erros no momento de instalar o pacote pyaudio do documento `requirements.txt`, pois ele irá depender de outros programas instalados em seu sistema. Solucionei o problema no `StackOverflow`. Meu sistema é o `Ubuntu` mas acredito que funcione para todos os baseados em `debian`.
+
+```1º → Será necessário instalar o módulo libasound-dev com o comando:```
+
+`sudo apt-get install libasound-dev`
+
+
+```2º → Será fazer o download e instalar o módulo portaudio de acordo com o seu sistema```
+
+`http://portaudio.com/download.html`
+
+
+```3° → Descompacte o arquivo e entre no seu diretório, depois rode o seguinte:```
+
+`./configure && make`
+
+`sudo make install`
+
+
+``` Agora pode voltar a rodar o comando de instlação de dependências```
+
+`make install`
+
+Na resolução é recomendado a instalação do `portaudio0.2.9`
+    
+`Link da solução`: ```https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error```
 
 
 ### **Notas para o professor.**
