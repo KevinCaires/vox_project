@@ -1,16 +1,23 @@
 ## Projeto de IHM para entrada de voz e resposta.
 
 ### **Observações**:
-Esse código foi testado apenas em ambiente `linux`. Não sabemos como ele poderá responder em um ambiente `windows` ou `macos`.
+Sistema compatível:
+
+![Linux Badge](https://img.shields.io/badge/OS-Linux-black.svg)
+
+Sistemas não testados:
+ 
+ ![Windows Badge](https://img.shields.io/badge/SO-Windows-black)
+ 
+ ![Macos Badge](https://img.shields.io/badge/SO-MacOs-black)
 
 `_________________________________________________________________________________________________________`
 
 
-### Linguagem utilizada
-```py
-python==3.6
-```
-`_________________________________________________________________________________________________________`
+### **Linguagem:**
+
+![Python Badge](https://img.shields.io/badge/Python-3.6.9-black)
+_________________________________________________________________________________________________________`
 
 
 ### **Problemas comuns:**
