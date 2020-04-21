@@ -17,7 +17,8 @@ Sistemas não testados:
 ### **Linguagem:**
 
 ![Python Badge](https://img.shields.io/badge/Python-3.6.9-black)
-_________________________________________________________________________________________________________`
+
+`_________________________________________________________________________________________________________`
 
 
 ### **Problemas comuns:**
@@ -89,14 +90,8 @@ Link da solução`: https://stackoverflow.com/questions/20023131/cannot-install-
 
 Ao criar a aplicação foram usados os módulos `gTTS`, `SpeechRecognition` e o `pygame`.
 
-O módulo `SpeechRecognition` foi usado para realizar o reconhecimento da fala e interpretação da mesma pelo programa. Ele recebe uma entrada de aúdio, reconhece o comando e realiza a ação de acordo com a programação utilizada. Maiores informações no `link¹`.
+O módulo `SpeechRecognition` foi usado para realizar o reconhecimento da fala e interpretação da mesma pelo programa. Ele recebe uma entrada de aúdio, reconhece o comando e realiza a ação de acordo com a programação utilizada. Para maiores informações clique [aqui](https://pypi.org/project/SpeechRecognition/).
 
-O módulo `gTTS` foi utilizado para realizar a resposta em aúdio. Esse módulo foi criado pela empresa google, com ele nós passamos uma entrada de texto, cuja a qual ele transforma em aúdio para ser reproduzido pelo programa conforme a codificação do mesmo. Maiores informações no `link²`.
+O módulo `gTTS` foi utilizado para realizar a resposta em aúdio. Esse módulo foi criado pela empresa google, com ele nós passamos uma entrada de texto, cuja a qual ele transforma em aúdio para ser reproduzido pelo programa conforme a codificação do mesmo. Para maiores informações clique [aqui](https://pypi.org/project/gTTS/).
 
-O módulo `pygame` foi utilizado para realizar a reprodução da resposta gravada em formato mp3. Apesar de esse módulo se criado para utilização no desenvolvimento de jogos, o mesmo pode ser utilizado em váriados projetos. Mais informações no `link³`.
-
-`¹`  https://pypi.org/project/SpeechRecognition/
-
-`²`  https://pypi.org/project/gTTS/
-
-`³`  https://www.pygame.org/wiki/about/
+O módulo `pygame` foi utilizado para realizar a reprodução da resposta gravada em formato mp3. Apesar de esse módulo se criado para utilização no desenvolvimento de jogos, o mesmo pode ser utilizado em váriados projetos. Para maiores informações clique [aqui](https://www.pygame.org/wiki/about/).
