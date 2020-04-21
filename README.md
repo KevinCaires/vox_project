@@ -21,7 +21,8 @@ python==3.6
 
 Pode haver erros no momento de instalar o pacote pyaudio do documento `requirements.txt`, pois ele irá depender de outros programas instalados em seu sistema. Solucionei o problema no `StackOverflow`. Meu sistema é o `Ubuntu` mas acredito que funcione para todos os baseados em `debian`.
 
-```1º → Será necessário instalar o módulo libasound-dev com o comando:
+```
+1º → Será necessário instalar o módulo libasound-dev com o comando:
 
 `sudo apt-get install libasound-dev`
 
