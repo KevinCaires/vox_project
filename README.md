@@ -52,6 +52,7 @@ sudo apt-get install libasound-dev
 
 2º → Será fazer o download e instalar o módulo portaudio de acordo com o seu sistema
 
+
 http://portaudio.com/download.html
 
 
@@ -76,12 +77,12 @@ O comando `PARAR` irá parar o programa. Você conseguira o mesmo resultado com 
 
 `_________________________________________________________________________________________________________`
 
-```
-²
-Na resolução é recomendado a instalação do portaudio0.2.9
+
+`²` 
+No [StackOverflow](https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error) é recomendado a instalação do portaudio0.2.9
     
-Link da solução`: https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error
-```
+
+
 
 `_________________________________________________________________________________________________________`
 
