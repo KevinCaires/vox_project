@@ -24,16 +24,16 @@ Pode haver erros no momento de instalar o pacote pyaudio do documento `requireme
 ### **Como utilizar.**
 
 ```
-1 - Crie uma ambiente virtual do python. E.g. `virtualenv` ou `virtualenvwrapper`.
+1 - Crie uma ambiente virtual do python. E.g. virtualenv ou virtualenvwrapper.
 
-2 - Após estar com o ambiente virtual ativo instale os pacotes necessários que estão dentro de `¹requirements.txt` - Você pode fazer isso utilizando o comando make install.
+2 - Após estar com o ambiente virtual ativo instale os pacotes necessários que estão dentro de ¹requirements.txt - Você pode fazer isso utilizando o comando make install.
 
 3 - Agora que os pacotes já foram instalados podemos rodar o código no terminal - Você pode fazer isso com o comando make run
 ```
 `_________________________________________________________________________________________________________`
 
 
-Caso haja o erro mencionado em ¹:
+`Caso haja o erro mencionado em ¹:`
 
 ```
 
@@ -66,14 +66,16 @@ O comando ADICIONAR irá adicionar um novo comando e sua resposta, adiconando ao
 O comando `PARAR` irá parar o programa. Você conseguira o mesmo resultado com o comando ctrl + C.```
 
 
+```
 `_________________________________________________________________________________________________________`
 
 ```
 ²
 Na resolução é recomendado a instalação do portaudio0.2.9
     
-Link da solução`: ```https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error
+Link da solução`: https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error
 ```
+
 `_________________________________________________________________________________________________________`
 
 
