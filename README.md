@@ -70,9 +70,9 @@ make install
 
 Quando iniciamos o programa temos dispostos na tela do terminal dois comando padrões do sistema, ADICIONAR e PARAR.
 
-O comando ADICIONAR irá adicionar um novo comando e sua resposta, adiconando ao banco de dados do sistema, banco de dados simples sqlite3, que ficara guadado ná máquina enquanto o arquivo permanecer intacto.
+O comando ADICIONAR irá adicionar um novo comando e sua resposta, adiconando ao banco de dados do sistema, banco de dados simples sqlite3, que ficara guardado na máquina enquanto o arquivo permanecer intacto.
 
-O comando `PARAR` irá parar o programa. Você conseguira o mesmo resultado com o comando ctrl + C.
+O comando PARAR irá parar o programa. Você conseguira o mesmo resultado com o comando ctrl + C.
 ```
 
 `_________________________________________________________________________________________________________`
