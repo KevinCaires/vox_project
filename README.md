@@ -7,9 +7,9 @@ Sistema compatível:
 
 Sistemas não testados:
  
- ![Windows Badge](https://img.shields.io/badge/SO-Windows-black)
+ ![Windows Badge](https://img.shields.io/badge/OS-Windows-black)
  
- ![Macos Badge](https://img.shields.io/badge/SO-MacOs-black)
+ ![Macos Badge](https://img.shields.io/badge/OS-MacOs-black)
 
 `_________________________________________________________________________________________________________`
 
