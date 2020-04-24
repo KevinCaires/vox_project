@@ -32,7 +32,7 @@ def get_insult(phrase):
             if user_said[i] in common_things:
                 common_points += 1 if user_said[i] in common_things else 0
 
-    if coquet_points >= satanic_points and coquet_points > common_points:
+    if coquet_points >= 1:
         response = random_response(insult_list.get('coquet'))
 
     if satanic_points > common_points:
