@@ -1,4 +1,5 @@
 from gtts import gTTS
+from insult_response import get_insult
 from loader_recorder import set_command, get_response, get_command_list
 from os import path, system
 import pygame
@@ -19,6 +20,9 @@ def record_audio(audio):
     tts = gTTS(audio, lang='pt-br')
     # Salva a entrada no formato mp3.
     tts.save('audios/audio_response.mp3')
+
+    response_audio()
+
 
 def get_audio():
     """
@@ -50,36 +54,38 @@ def get_audio():
         # Armazena a informação de audio na variável.
         audio = mic_in.listen(source)
 
-        try:
-            # Passa o aúdio para o reconhecedor de padrões do google trasformar em frase.
-            phrase = mic_in.recognize_google(audio, language='pt-BR')
-            print(f'Entrada de aúdio: {phrase}')
-            
-            # Condição para o caso de o usuário use o comando ADD.
-            if str(phrase).upper() == COMMAND_LIST[0]:
-                set_command()
+    try:
+        system('clear')
+        print('Processando ...')
+        # Passa o aúdio para o reconhecedor de padrões do google trasformar em frase.
+        phrase = mic_in.recognize_google(audio, language='pt-BR')
+        print(f'Entrada de aúdio: {phrase}')
+        
+        # Condição para o caso de o usuário use o comando ADD.
+        if str(phrase).upper() == COMMAND_LIST[0]:
+            set_command()
 
-                return get_audio()
-            
-            if str(phrase).upper() == COMMAND_LIST[1]:
-                return system('exit')
-            
-            if str(phrase).upper() not in get_command_list():
-                record_audio('Esse comando não está cadastrado')
-                response_audio()
-
-                return get_audio()
-
-            record_audio(get_response(phrase))
-            response_audio()
+            return get_audio()
+        
+        if str(phrase).upper() == COMMAND_LIST[1]:
+            return system('exit')
+        
+        if str(phrase).upper() not in get_command_list():
+            insult = get_insult(phrase)
+            record_audio(insult)
 
             return get_audio()
 
-        except UnknownValueError:
-            record_audio('Padrão de fala não reconhecido. Tente novamente!')
-            response_audio()
+        record_audio(get_response(phrase))
 
-            return get_audio()
+        return get_audio()
+
+    except UnknownValueError:
+        insult = get_insult('Vox')
+        record_audio(insult)
+
+        return get_audio()
+
 
 def response_audio():
     """
@@ -88,7 +94,7 @@ def response_audio():
     # Limpa o terminal.
     system('clear')
 
-    print('Processando o que me disse ...')
+    print('Gerando resposta ...')
     pygame.init()  # pylint: disable=no-member
 
     # Carrega o aúdio no mixer.
