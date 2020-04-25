@@ -34,9 +34,11 @@ def get_insult(phrase):
 
     if coquet_points >= 1:
         response = random_response(insult_list.get('coquet'))
+        return response
 
     if satanic_points > common_points:
         response = random_response(insult_list.get('satanic_call'))
+        return response
     
     else:
         coin = randint(0,1)
