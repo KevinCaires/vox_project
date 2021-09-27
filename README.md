@@ -11,14 +11,14 @@ Sistemas não testados:
  
  ![Macos Badge](https://img.shields.io/badge/OS-MacOs-black)
 
-`_________________________________________________________________________________________________________`
+---
 
 
 ### **Linguagem:**
 
 ![Python Badge](https://img.shields.io/badge/Python-3.6.9-black)
 
-`_________________________________________________________________________________________________________`
+---
 
 
 ### **Problemas comuns:**
@@ -26,8 +26,7 @@ Sistemas não testados:
 Pode haver erros no momento de instalar o pacote pyaudio do documento `requirements.txt¹`, pois ele irá depender de outros programas instalados em seu sistema. Solucionei o problema no `StackOverflow²`. Meu sistema é o `Ubuntu` mas acredito que funcione para todos os baseados em `debian`.
 
 
-`_________________________________________________________________________________________________________`
-
+---
 
 ### **Como utilizar.**
 
@@ -38,8 +37,7 @@ Pode haver erros no momento de instalar o pacote pyaudio do documento `requireme
 
 3 - Agora que os pacotes já foram instalados podemos rodar o código no terminal - Você pode fazer isso com o comando make run
 ```
-`_________________________________________________________________________________________________________`
-
+---
 
 `Caso haja o erro mencionado em ¹:`
 
@@ -75,17 +73,14 @@ O comando ADICIONAR irá adicionar um novo comando e sua resposta, adiconando ao
 O comando PARAR irá parar o programa. Você conseguira o mesmo resultado com o comando ctrl + C.
 ```
 
-`_________________________________________________________________________________________________________`
+---
 
 
 `²` 
 No [StackOverflow](https://stackoverflow.com/questions/20023131/cannot-install-pyaudio-gcc-error) é recomendado a instalação do portaudio0.2.9
-    
 
 
-
-`_________________________________________________________________________________________________________`
-
+---
 
 ### **Notas para o professor.**
 
